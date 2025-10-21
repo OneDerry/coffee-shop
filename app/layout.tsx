@@ -30,11 +30,11 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
         style={{ paddingTop: "calc(var(--header-height) + 8px)" }}
       >
-        <div className="fixed inset-0 top-10 left-0 right-0 z-10 w-full">
+        <div className="fixed inset-0 top-20 left-0 right-0 z-10 w-full">
           <Header />
         </div>
         {children}
-        <Footer />
+          <Footer />
       </body>
     </html>
   );

@@ -3,14 +3,14 @@ import { ShoppingCartIcon } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-transaprent py-4">
+    <header className="bg-transaprent py-4 text-white">
       <div className="container mx-auto px-4 flex justify-between items-center">
         <div>
-          <h1 className="text-2xl font-bold">Coffee Site</h1>
+          <h1 className="text-4xl font-bold">Coffee Haven</h1>
         </div>
         <div>
-          <nav className="flex items-center gap-4">
-            <ul className="flex items-center gap-4">
+          <nav className="flex text-4xl items-center gap-28">
+            <ul className="flex items-center gap-28">
               <li>
                 <Link href="/">Home</Link>
               </li>

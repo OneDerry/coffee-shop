@@ -52,7 +52,7 @@
   --popover: oklch(1 0 0);
   --popover-foreground: oklch(0.147 0.004 49.25);
   /* --primary: oklch(0.216 0.006 56.043); */
-  --primary: oklch(36.44% 0.119 29.91);
+  --primary: #42190d;
   --primary-foreground: oklch(0.985 0.001 106.423);
   --secondary: oklch(0.97 0.001 106.424);
   --secondary-foreground: oklch(0.216 0.006 56.043);
@@ -120,4 +120,18 @@
   body {
     @apply bg-background text-foreground;
   }
+}
+
+* {
+  scroll-behavior: smooth;
+  box-sizing: border-box;
+}
+
+/* For Webkit browsers */
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+.carousel {
+  -ms-overflow-style: none; /* IE/Edge */
+  scrollbar-width: none; /* Firefox */
 }
