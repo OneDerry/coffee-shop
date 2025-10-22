@@ -131,6 +131,7 @@
 .carousel::-webkit-scrollbar {
   display: none;
 }
+
 .carousel {
   -ms-overflow-style: none; /* IE/Edge */
   scrollbar-width: none; /* Firefox */

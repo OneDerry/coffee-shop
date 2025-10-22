@@ -195,7 +195,7 @@ export default function Shop() {
             Special Combo Offers
           </h1>
         </div>
-        <div className="grid gap-5 sm:grid-cols-2">
+        <div className="max-w-[80%] mx-auto grid gap-5 sm:grid-cols-2">
           {special.map((item) => (
             <Card
               key={item.id}
