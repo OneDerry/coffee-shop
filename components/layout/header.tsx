@@ -4,7 +4,7 @@ import { ShoppingCartIcon } from "lucide-react";
 export default function Header() {
   return (
     <header className="bg-transaprent py-4 text-white">
-      <div className="container mx-auto px-4 flex justify-between items-center">
+      <div className="container mx-auto px-6 flex justify-between items-center bg-primary/80 p-4 rounded-2xl">
         <div>
           <h1 className="text-4xl font-bold">Coffee Haven</h1>
         </div>

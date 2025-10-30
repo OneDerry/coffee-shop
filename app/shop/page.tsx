@@ -1,4 +1,5 @@
 "use client";
+import React from "react";
 
 import Image from "next/image";
 import {
@@ -11,12 +12,12 @@ import {
 } from "@/components/common";
 
 import coffee6 from "@/public/coffee6.jpeg";
-import coffee7 from "@/public/Cappuccino.jpeg";
 import coffee2 from "@/public/coffee2.jpeg";
+import coffee7 from "@/public/Cappuccino.jpeg";
 import coffee3 from "@/public/coffee3.jpeg";
 import coffee4 from "@/public/coffee4.jpeg";
 import coffee5 from "@/public/coffee5.jpeg";
-import React from "react";
+import SpecialCombo from "./special_combo_offers";
 
 export default function Shop() {
   const coffee = [
@@ -94,23 +95,6 @@ export default function Shop() {
     },
   ];
 
-  const special = [
-    {
-      id: 1,
-      image: coffee6,
-      title: "Brown Sugar Latte",
-      description: "Espresso sweetened with caramelized brown sugar syrup.",
-      price: "$4.55",
-    },
-    {
-      id: 2,
-      image: coffee2,
-      title: "Iced Vanilla Latte",
-      description: "Chilled espresso with vanilla syrup and cold milk.",
-      price: "$4.60",
-    },
-  ];
-
   const carouselRef = React.useRef<HTMLDivElement>(null);
 
   const scrollCarousel = (dir: "left" | "right") => {
@@ -155,74 +139,42 @@ export default function Shop() {
             {coffee.map((item) => (
               <Card
                 key={item.id}
-                data-carousel-card // For width detection
-                className="min-w-[260px] min-h-[460px] snap-center border-none shadow-none flex-shrink-0 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
+                // data-carousel-card
+                className="border-none shadow-none flex bg-white hover:shadow-lg transition-all duration-300"
               >
-                <CardHeader className="p-0 relative">
-                  <div className="w-160 h-160">
+                <div className="relative">
+                  <div className="w-[300px] h-[300px]">
                     <Image
                       src={item.image}
                       alt={item.title}
                       fill
-                      className="rounded-t-2xl  object-cover h-48 w-full"
+                      className="w-full"
                     />
                   </div>
-                  <span className="absolute top-2 right-2 bg-black/70 text-white text-sm px-2 py-1 rounded-md">
+                  <span className="absolute bottom-0 right-0 bg-primary text-white font-bold text-3xl px-4 py-6 font-serif rounded-tl-xl">
                     {item.price}
                   </span>
-                </CardHeader>
-                <CardContent className="p-4">
-                  <CardTitle className="text-lg font-semibold mb-2">
+                </div>
+                <div className="-0">
+                  <CardTitle className="text-2xl font-bold">
                     {item.title}
                   </CardTitle>
-                  <CardDescription className="text-sm text-gray-500">
+                  <CardDescription className=" text-gray-500">
                     {item.description}
                   </CardDescription>
-                </CardContent>
+                </div>
               </Card>
             ))}
           </div>
         </div>
         <div className="flex items-center justify-center">
-          <Button variant="default" size="lg">
+          <Button variant="default" size="lg" className="px-10 py-8 text-2xl">
             View Menu
           </Button>
         </div>
       </section>
-      <section>
-        <div>
-          <h1 className="text-5xl font-bold mb-8 text-center">
-            Special Combo Offers
-          </h1>
-        </div>
-        <div className="max-w-[80%] mx-auto grid gap-5 sm:grid-cols-2">
-          {special.map((item) => (
-            <Card
-              key={item.id}
-              data-carousel-card // For width detection
-              className="min-w-[260px] min-h-[460px] snap-center border-none shadow-none flex-shrink-0 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
-            >
-              <CardHeader className="p-0 relative">
-                <div className="w-160 h-160">
-                  <Image
-                    src={item.image}
-                    alt={item.title}
-                    fill
-                    className="rounded-t-2xl  object-cover h-48 w-full"
-                  />
-                </div>
-                <span className="absolute top-2 right-2 bg-black/70 text-white text-sm px-2 py-1 rounded-md">
-                  {item.price}
-                </span>
-              </CardHeader>
-              <CardContent className="p-4">
-                <CardTitle className="text-lg font-semibold mb-2">
-                  {item.title}
-                </CardTitle>
-              </CardContent>
-            </Card>
-          ))}
-        </div>
+      <section className="mt-20">
+        <SpecialCombo />
       </section>
     </main>
   );

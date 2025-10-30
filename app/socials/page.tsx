@@ -4,35 +4,38 @@ import {
   Button,
   Card,
   CardContent,
+  CardDescription,
   CardFooter,
   CardHeader,
   CardTitle,
 } from "@/components/common";
 import Image from "next/image";
 
-import coffee2 from "@/public/coffee2.jpeg";
-import coffee7 from "@/public/Cappuccino.jpeg";
-import { Dot } from "lucide-react";
+import People1 from "@/public/People1.jpeg";
+import People2 from "@/public/People2.jpeg";
+import People3 from "@/public/People3.jpeg";
+
+import { Bookmark, Dot, Heart, MessageCircle, Share } from "lucide-react";
 
 export default function Socials() {
   const reviews = [
     {
-      id: 1,
-      image: coffee2,
+      id: 13,
+      image: People1,
       title: "Velvet Latte",
       description: "Smooth and creamy with a hint of caramel sweetness.",
       price: "$4.50",
     },
     {
-      id: 2,
-      image: coffee7,
+      id: 14,
+      image: People2,
       title: "Hazelnut Latte",
       description: "Nutty aroma with a rich espresso base and silky milk.",
       price: "$4.20",
     },
     {
-      id: 3,
-      image: coffee7,
+      id: 15,
+      image: People3,
       title: "Hazelnut Latte",
       description: "Nutty aroma with a rich espresso base and silky milk.",
       price: "$4.20",
@@ -48,12 +51,11 @@ export default function Socials() {
         {reviews.map((item) => (
           <Card
             key={item.id}
-            data-carousel-card // For width detection
+            // data-carousel-card // For width detection
             className="min-w-[260px] snap-center border-none shadow-none flex-shrink-0 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
           >
             <CardHeader className="p-0 relative bg-white">
               <div className="flex items-center justify-between w-full">
-                {/* Left: avatar + text */}
                 <div className="flex items-center gap-3 min-w-0">
                   <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
                     <Image
@@ -73,40 +75,50 @@ export default function Socials() {
                     </span>
                   </div>
                 </div>
-                {/* Right: button */}
                 <Button variant="ghost" size="icon">
                   <Dot />
                 </Button>
               </div>
             </CardHeader>
-            <CardContent className="p-4">
-              <div className="w-160 h-160 rounded-full">
+            <CardContent className="relative p-4 flex flex-col">
+              <div className="w">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  fill
-                  className="rounded-t-2xl  object-cover h-48 w-full"
+                  // fill
+                  className="object-cover w-3xl"
                 />
               </div>
-              <CardTitle className="text-lg font-semibold mb-2">
-                {item.title}
-              </CardTitle>
+              <div className="my-2">
+                <div className="flex items-center justify-between">
+                  <div className="flex items-center gap-5">
+                    <Heart />
+                    <MessageCircle />
+                    <Share />
+                  </div>
+                  <div>...</div>
+                  <Bookmark />
+                </div>
+              </div>
+            </CardContent>
 
-              <div>
-                <div className="w-40 h-40 rounded-full">
+            <CardFooter className="relative flex flex-row">
+              <div className="flex items-center gap-3 min-w-0">
+                <div className="w-10 h-10 rounded-full flex-shrink-0">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    fill
-                    className="rounded-t-2xl  object-cover h-48 w-full"
+                    width={40}
+                    height={40}
+                    className="rounded-full object-cover  w-full"
                   />
                 </div>
+                <div>
+                  <p>Liked by name and 4 others</p>
+                  <p>scomments @group hangouts</p>
+                </div>
               </div>
-              <span className="absolute top-2 right-2 bg-black/70 text-white text-sm px-2 py-1 rounded-md">
-                {item.price}
-              </span>
-            </CardContent>
-            <CardFooter>
+
               <p>June 21</p>
             </CardFooter>
           </Card>
