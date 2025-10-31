@@ -27,8 +27,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-        style={{ paddingTop: "calc(var(--header-height) + 8px)" }}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
+        style={{
+          paddingTop: "calc(var(--header-height) + 8px)",
+        }}
       >
         <div className="fixed inset-0 top-20 left-0 right-0 z-20 w-full">
           <Header />

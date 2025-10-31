@@ -26,21 +26,21 @@ export default function SpecialCombo() {
     },
   ];
   return (
-    <main>
+    <main className="">
       <div>
         <h1 className="text-5xl font-bold mb-8 text-center">
           Special Combo Offers
         </h1>
       </div>
-      <div className="max-w-[80%] mx-auto grid gap-5 sm:grid-cols-2">
+      <div className="max-w-[80%] mx-auto grid gap-10 sm:grid-cols-2">
         {special.map((item) => (
           <Card
             key={item.id}
-            data-carousel-card // For width detection
-            className=" snap-center border-none shadow-none flex-shrink-0 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
+            // data-carousel-card // For width detection
+            className="shadow-none border-none bg-slate-0 flex-shrink-0 hover:shadow-lg transition-all duration-300"
           >
             <CardHeader className="p-0 relative">
-              <div className="w-130 h-130">
+              <div className="w-100 h-120">
                 <Image
                   src={item.image}
                   alt={item.title}

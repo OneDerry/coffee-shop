@@ -4,10 +4,8 @@ import {
   Button,
   Card,
   CardContent,
-  CardDescription,
   CardFooter,
   CardHeader,
-  CardTitle,
 } from "@/components/common";
 import Image from "next/image";
 
@@ -15,7 +13,7 @@ import People1 from "@/public/People1.jpeg";
 import People2 from "@/public/People2.jpeg";
 import People3 from "@/public/People3.jpeg";
 
-import { Bookmark, Dot, Heart, MessageCircle, Share } from "lucide-react";
+import { Bookmark, Ellipsis, Heart, MessageCircle, Share } from "lucide-react";
 
 export default function Socials() {
   const reviews = [
@@ -47,17 +45,17 @@ export default function Socials() {
       <div>
         <h1 className="text-4xl font-bold text-center">Our Customer Reviews</h1>
       </div>
-      <section className="grid sm:grid-cols-3 gap-10 max-w-[80%] mx-auto">
+      <section className="grid sm:grid-cols-3 gap-10 max-w-[80%] mx-auto my-10">
         {reviews.map((item) => (
           <Card
             key={item.id}
             // data-carousel-card // For width detection
-            className="min-w-[260px] snap-center border-none shadow-none flex-shrink-0 bg-white rounded-2xl hover:shadow-lg transition-all duration-300"
+            className=" border-none shadow-none flex-shrink-0 bg-white rounded-none  hover:shadow-lg transition-all duration-300"
           >
-            <CardHeader className="p-0 relative bg-white">
+            <CardHeader className="relative">
               <div className="flex items-center justify-between w-full">
-                <div className="flex items-center gap-3 min-w-0">
-                  <div className="w-10 h-10 rounded-full overflow-hidden bg-gray-200 flex-shrink-0">
+                <div className="flex items-center gap-3">
+                  <div className="w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                     <Image
                       src={item.image}
                       alt={item.title}
@@ -75,42 +73,42 @@ export default function Socials() {
                     </span>
                   </div>
                 </div>
-                <Button variant="ghost" size="icon">
-                  <Dot />
-                </Button>
+                <button>
+                  <Ellipsis size={20} />
+                </button>
               </div>
             </CardHeader>
-            <CardContent className="relative p-4 flex flex-col">
-              <div className="w">
+            <CardContent className="relative">
+              <div className="h-100">
                 <Image
                   src={item.image}
                   alt={item.title}
-                  // fill
+                  fill
                   className="object-cover w-3xl"
                 />
-              </div>
-              <div className="my-2">
-                <div className="flex items-center justify-between">
-                  <div className="flex items-center gap-5">
-                    <Heart />
-                    <MessageCircle />
-                    <Share />
-                  </div>
-                  <div>...</div>
-                  <Bookmark />
-                </div>
+                <div>...</div>
               </div>
             </CardContent>
+            <div className="px-3">
+              <div className="flex items-center justify-between">
+                <div className="flex items-center gap-5">
+                  <Heart />
+                  <MessageCircle />
+                  <Share />
+                </div>
+                <Bookmark />
+              </div>
+            </div>
 
-            <CardFooter className="relative flex flex-row">
+            <CardFooter className=" flex flex-row">
               <div className="flex items-center gap-3 min-w-0">
-                <div className="w-10 h-10 rounded-full flex-shrink-0">
+                <div className="relative w-10 h-10 rounded-full overflow-hidden flex-shrink-0">
                   <Image
                     src={item.image}
                     alt={item.title}
-                    width={40}
-                    height={40}
-                    className="rounded-full object-cover  w-full"
+                    width={30}
+                    height={30}
+                    className="rounded-full object-cover"
                   />
                 </div>
                 <div>
