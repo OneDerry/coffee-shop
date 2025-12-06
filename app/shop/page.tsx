@@ -2,14 +2,7 @@
 import React from "react";
 
 import Image from "next/image";
-import {
-  Button,
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/common";
+import { Button, Card, CardDescription, CardTitle } from "@/components/common";
 
 import coffee6 from "@/public/coffee6.jpeg";
 import coffee2 from "@/public/coffee2.jpeg";
