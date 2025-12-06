@@ -18,6 +18,7 @@ import coffee3 from "@/public/coffee3.jpeg";
 import coffee4 from "@/public/coffee4.jpeg";
 import coffee5 from "@/public/coffee5.jpeg";
 import SpecialCombo from "./special_combo_offers";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
 export default function Shop() {
   const coffee = [
@@ -119,7 +120,7 @@ export default function Shop() {
             className="absolute left-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow-md p-2 hover:bg-white/100 transition-all hidden md:block"
             style={{ pointerEvents: "auto" }}
           >
-            <span>&larr;</span>
+            <ArrowLeft />
           </button>
           <button
             aria-label="Scroll right"
@@ -127,20 +128,20 @@ export default function Shop() {
             className="absolute right-2 top-1/2 -translate-y-1/2 z-10 bg-white/80 rounded-full shadow-md p-2 hover:bg-white/100 transition-all hidden md:block"
             style={{ pointerEvents: "auto" }}
           >
-            <span>&rarr;</span>
+            <ArrowRight />
           </button>
           <div
             ref={carouselRef}
-            className="flex gap-6 overflow-x-auto px-6 scroll-smooth snap-x snap-mandatory scrollbar-thin scrollbar-thumb-gray-300 scrollbar-track-transparent"
+            className="flex gap-6 overflow-x-auto px-6 scroll-smooth snap-x snap-mandatory scrollbar-none"
             tabIndex={0}
             aria-label="Coffee carousel"
-            style={{ scrollbarWidth: "thin" }}
+            style={{ scrollbarWidth: "none" }}
           >
             {coffee.map((item) => (
               <Card
                 key={item.id}
-                // data-carousel-card
-                className="border-none shadow-none flex bg-white hover:shadow-lg transition-all duration-300"
+                data-carousel-card
+                className="border-none bg-transparent shadow-none flex  hover:shadow-lg transition-all duration-300"
               >
                 <div className="relative">
                   <div className="w-[300px] h-[300px]">
@@ -156,7 +157,7 @@ export default function Shop() {
                   </span>
                 </div>
                 <div className="-0">
-                  <CardTitle className="text-2xl font-bold">
+                  <CardTitle className="text-xl font-bold">
                     {item.title}
                   </CardTitle>
                   <CardDescription className=" text-gray-500">
@@ -167,7 +168,7 @@ export default function Shop() {
             ))}
           </div>
         </div>
-        <div className="flex items-center justify-center">
+        <div className="mt-10 flex items-center justify-center">
           <Button variant="default" size="lg" className="px-10 py-8 text-2xl">
             View Menu
           </Button>

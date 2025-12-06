@@ -53,8 +53,8 @@ export default function SpecialCombo() {
                 {item.price}
               </p>
             </CardHeader>
-            <CardContent className="p-4">
-              <CardTitle className="text-lg font-semibold mb-2">
+            <CardContent className="p-0">
+              <CardTitle className="text-xl font-bold mb-2">
                 {item.title}
               </CardTitle>
             </CardContent>
